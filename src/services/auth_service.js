@@ -1,21 +1,7 @@
 import axios from 'axios'
 
-/*
-  I need to check and see if port 4000 is running.
-  If it is running then I need to have it run on 4000.
-  Otherwise it needs to pull from the heroku app.
-  https://batterday-stage.herokuapp.com/
-*/
 
-function setPath () {
-  if (process.env.DATABASE_URL !== undefined) {
-    return process.env.DATABASE_URL + '/auth';
-  } else {
-    return 'http://localhost:4000/auth'
-  }
-}
-
-const api_url = setPath();
+const api_url = "https://bdapi-stage.herokuapp.com/auth";
 
 class AuthService {
     // The function to login

@@ -24,18 +24,11 @@ const Home = () => {
     loading: true,
     data : []
   })
-  function setPath () {
-    if (process.env.DATABASE_URL !== undefined) {
-      return process.env.DATABASE_URL + '/';
-    } else {
-      return 'http://localhost:4000/'
-    }
-  }
+
   useEffect(() => {
     // Call on the categories and products, save them to states
     async function callAPI() {
-      setPath();
-      const mainPath = setPath();
+      const mainPath = "https://bdapi-stage.herokuapp.com/";
       const path1 = mainPath + 'categories';
       const path2 = mainPath + 'products'
 

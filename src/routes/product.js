@@ -19,17 +19,11 @@ const Product = () => {
 
   const id = useParams().id
 
-  function setPath () {
-    if (process.env.DATABASE_URL !== undefined) {
-      return process.env.DATABASE_URL + '/products/';
-    } else {
-      return 'http://localhost:4000/products/'
-    }
-  }
+  const path = "https://bdapi-stage.herokuapp.com/products/";
 
   useEffect(() => {
     async function getItem() {
-      await axios.get(setPath() + id).then(res => {
+      await axios.get(path + id).then(res => {
         console.log(res.data)
         if(res.data !== undefined) {
           setItem({
