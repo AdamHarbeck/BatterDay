@@ -28,23 +28,24 @@ const purchased = {
 };
 
 const Purchased = () => (
-  <div>
-    <Header />
-    <h1 className={routes.heading}>Purchase Complete</h1>
-    <div className={routes.flex}>
-      <p className={routes.text}>Order Number: {purchased.orderNum}</p>
-      <p className={routes.text}>{purchased.subtotal}</p>
+  <div className={routes.pageContainer}>
+    <div>
+      <Header />
+      <h1 className={routes.heading}>Purchase Complete</h1>
+      <div className={routes.flex}>
+        <p className={routes.text}>Order Number: {purchased.orderNum}</p>
+        <p className={routes.text}>{purchased.subtotal}</p>
+      </div>
+      {purchased.items.map((item) => (
+          <PchsdCard item={item} />
+      ))}
+      <PchsdCard />
+      <div className={routes.linkContainer}>
+        <Link to={'/'} className={routes.textDecor}>
+          <MainBtn btnText='Back to Home'/>
+        </Link>
+      </div>
     </div>
-    {purchased.items.map((item) => (
-        <PchsdCard item={item} />
-    ))}
-    <PchsdCard />
-    <div className={routes.linkContainer}>
-      <Link to={'/'} className={routes.textDecor}>
-        <MainBtn btnText='Back to Home'/>
-      </Link>
-    </div>
-
     <Footer />
   </div>
 );

@@ -77,7 +77,7 @@ export default class Reset extends Component {
   render() {
     
     return (
-      <div>
+      <div className={routes.pageContainer}>
         <Header />
         <Form
           onSubmit={this.handleLogin}
@@ -93,7 +93,6 @@ export default class Reset extends Component {
                 onChange={this.onPass1Change}
                 validations={[required]}
                 placeholder={'Enter Password'}
-                
               />
             </div>
             <div className="form-group">

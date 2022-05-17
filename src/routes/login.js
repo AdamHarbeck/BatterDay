@@ -82,10 +82,11 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div>
-        <Header />
-        <BackTitle value={'Login'} />
-        <Form
+      <div className={routes.pageContainer}>
+        <div>
+          <Header />
+          <BackTitle value={'Login'} />
+          <Form
           onSubmit={this.handleLogin}
           ref={c => {this.form = c;}}
           >
@@ -137,6 +138,8 @@ export default class Login extends Component {
             }}
           />
         </Form>
+        </div>
+       
         <Footer />
       </div>
     );

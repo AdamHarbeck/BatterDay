@@ -33,7 +33,9 @@
 }
 .subtotal {
   composes: flex;
-  border: .1rem solid #523F38;
+  margin: 4rem 0;
+  border-top: .1rem solid #523f38;
+  border-bottom: .1rem solid #523F38;
 }
 .subtotalC {
   width: 50rem;

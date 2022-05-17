@@ -10,6 +10,7 @@
   margin: 0 auto 2rem auto;
   color: #523F38;
   box-shadow: 0 .3rem .6rem rgba(7, 4, 74, .6);
+  cursor: pointer;
 }
 .container {
   margin: 0 auto;
@@ -21,6 +22,7 @@
   border-bottom-right-radius: 2.5rem;
   border: .1rem solid #523F38;
   background: #E7EFC5;
+  cursor: pointer;
 }
 .leftBtn {
   composes: rightBtn;
@@ -29,6 +31,12 @@
   background: #fff;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+#dblBtn {
+  border-radius: 3rem;
+  box-shadow: 0 .3rem .6rem rgba(7, 4, 74, .6);
+  margin-bottom: 4rem;
 }
 @media(min-width: 800px){
   .mainBtn {
@@ -59,7 +67,7 @@
 .icon {
   width: 2.5rem;
   height: 2.5rem;
-  color: #523F38;
+  color: inherit;
   display: block;
   margin: 0 auto;
 }
@@ -72,9 +80,11 @@
   width: 4rem;
   height: 4rem;
   border: .1rem solid #523F38;
+  color: #523F38;
   background: #E7EFC5;
   border-radius: 2rem;
   margin: .5rem;
+  cursor: pointer;
 }
 .link {
   display: block;
@@ -83,3 +93,8 @@
   height: 100%;
 }
 
+.mainBtn:hover, .circleBtn:hover, .rightBtn:hover, .leftBtn:hover {
+  background: #07054D;
+  color: #E7EFC5;
+  transition: .2s ease-in-out;
+}

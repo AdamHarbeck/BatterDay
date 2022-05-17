@@ -19,7 +19,7 @@ import store from './store';
 
 function App() {
   return (
-    <div>
+    <div id='appDiv'>
       <Provider store={store}>
         <BrowserRouter>
           <Routes>

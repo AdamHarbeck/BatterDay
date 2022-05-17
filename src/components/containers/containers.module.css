@@ -113,6 +113,12 @@
   color: #E7EFC5;
   margin: 0 1rem;
 }
+.iconLarge:hover {
+  background-color: #E7EFC5;
+  color: #07054D;
+  border-radius: 1rem;
+  transition: .2s ease-in-out;
+}
 .header {
   width: 100%;
   height: 7rem;
@@ -127,6 +133,12 @@
 .link {
   text-decoration: none;
   color: #E7EFC5;
+}
+.activeLink {
+  color: #C4D86F;
+}
+.link:hover {
+  color: #C4D86F;
 }
 .logo {
   font-size: 2.4rem;

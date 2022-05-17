@@ -9,21 +9,23 @@ import Footer from '../components/containers/Footer';
 import MainBtn from '../components/buttons/MainBtn';
 import styles from './routes.module.css';
 
+
 const cartItems = [
-  // {
-  //   name: 'Blueberry Muffins',
-  //   price: 4.95,
-  //   qty: 2,
-  //   image: Muffin,
-  // },
-  // {
-  //   name: 'Candy Chip Cookies',
-  //   price: 6.95,
-  //   qty: 1,
-  //   image: Cookie,
-  // },
+  {
+    name: 'Blueberry Muffins',
+    price: 4.95,
+    qty: 2,
+    image: Muffin,
+  },
+  {
+    name: 'Candy Chip Cookies',
+    price: 6.95,
+    qty: 1,
+    image: Cookie,
+  },
+
 ];
-// const cartItems = localStorage.getItem('userCart');
+
 
 function getTotal(items) {
   let total = 0;
@@ -47,29 +49,36 @@ function subTotal(items) {
 const cart = () => {
   if(cartItems.length === 0) {
     return(
-      <div>
-        <Header />
-        <BackTitle />
-        <div className={styles.center}>
-          <h1>There's nothing in your cart!</h1>
-          <p className={styles.textAlign}>Time to reward yourself!</p>
-          <Link to={'/categories'} className={styles.textDecor}>
-            <MainBtn btnText='Go Shopping'/>
-          </Link>
+      <div className={styles.pageContainer}>
+        <div>
+          <Header />
+          <BackTitle />
         </div>
+        <div className={styles.center}>
+            <h1>There's nothing in your cart!</h1>
+            <p className={styles.textAlign}>Time to reward yourself!</p>
+            <Link to={'/categories'} className={styles.textDecor}>
+              <MainBtn btnText='Go Shopping'/>
+            </Link>
+          </div>
         <Footer />
       </div>
     )
   } else {
     return (
-      <div>
-      <Header />
-      <BackTitle />
-      <h1 className={styles.heading}>Cart</h1>
-      {cartItems.map((item) => (
-          <CartCard item={item} />
-      ))}
-      <div className={styles.cart}>
+      <div className={styles.pageContainer}>
+        <div>
+          <Header />
+          <BackTitle />
+        </div>
+        <h1 className={styles.heading}>Cart</h1>
+        <div>
+          {cartItems.map((item) => (
+            <CartCard item={item} />
+          ))}
+        </div>
+        
+        <div className={styles.cart}>
         <div className={styles.cartDetail}>
           <p >TOTAL:</p>
           <p>{getTotal(cartItems)}</p>

@@ -1,5 +1,6 @@
 .dropDown {
   width: 15rem;
+  position: absolute
 }
 .textContainer {
   background: #E7EFC5;
@@ -10,5 +11,4 @@
   width: 15rem;
   height: 20rem;
   position: absolute;
-  top: 6rem;
 }

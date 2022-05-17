@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import styles from './buttons.module.css';
 
 const MainBtn = () => (
-  <div className={styles.container}>
+  <div className={styles.container} id={styles.dblBtn}>
     <Link to={'/cart'}>
       <Button className={styles.leftBtn}>Cancel</Button>
     </Link>

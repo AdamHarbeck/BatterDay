@@ -116,86 +116,88 @@ export default class Register extends Component {
   render() {
     if(!this.state.successful) {
       return (
-        <div>
-          <Header />
-          <BackTitle value={"Sign Up"} />
-          <div className={routeCSS.center}>
-            <Form
-              onSubmit={this.handleRegister}
-              ref={c => {
-                this.form = c;
-              }}
-            >
-              {!this.state.successful && (
-                <div>
-                  <div className="form-group">
-                    <Input
-                      type="text"
-                      className={`form-control ${inputs.basicLrg}`}
-                      name="firstname"
-                      value={this.state.first_name}
-                      onChange={this.onChangeFirstname}
-                      validations={[required]}
-                      placeholder={'First Name'}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <Input
-                      type="text"
-                      className={`form-control ${inputs.basicLrg}`}
-                      name="lastname"
-                      value={this.state.last_name}
-                      onChange={this.onChangeLastname}
-                      validations={[required]}
-                      placeholder={'Last Name'}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <Input
-                      type="email"
-                      className={`form-control ${inputs.basicLrg}`}
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.onChangeEmail}
-                      validations={[required, email]}
-                      placeholder={'Email'}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <Input
-                      type="password"
-                      className={`form-control ${inputs.basicLrg}`}
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.onChangePassword}
-                      validations={[required, vpassword]}
-                      placeholder={'Password'}
-                    />
-                  </div>
-                  <MainBtn btnText={'Sign Up'} />
-                </div>
-              )}
-              {this.state.message && (
-                <div className="form-group">
-                  <div
-                    className={
-                      this.state.successful
-                        ? "alert alert-success"
-                        : "alert alert-danger"
-                    }
-                    role="alert"
-                  >
-                    {this.state.message}
-                  </div>
-                </div>
-              )}
-              <CheckButton
-                style={{ display: "none" }}
+        <div className={routeCSS.pageContainer}>
+          <div>
+            <Header />
+            <BackTitle value={"Sign Up"} />
+            <div className={routeCSS.center}>
+              <Form
+                onSubmit={this.handleRegister}
                 ref={c => {
-                  this.checkBtn = c;
+                  this.form = c;
                 }}
-              />
-            </Form>
+              >
+                {!this.state.successful && (
+                  <div>
+                    <div className="form-group">
+                      <Input
+                        type="text"
+                        className={`form-control ${inputs.basicLrg}`}
+                        name="firstname"
+                        value={this.state.first_name}
+                        onChange={this.onChangeFirstname}
+                        validations={[required]}
+                        placeholder={'First Name'}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <Input
+                        type="text"
+                        className={`form-control ${inputs.basicLrg}`}
+                        name="lastname"
+                        value={this.state.last_name}
+                        onChange={this.onChangeLastname}
+                        validations={[required]}
+                        placeholder={'Last Name'}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <Input
+                        type="email"
+                        className={`form-control ${inputs.basicLrg}`}
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.onChangeEmail}
+                        validations={[required, email]}
+                        placeholder={'Email'}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <Input
+                        type="password"
+                        className={`form-control ${inputs.basicLrg}`}
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.onChangePassword}
+                        validations={[required, vpassword]}
+                        placeholder={'Password'}
+                      />
+                    </div>
+                    <MainBtn btnText={'Sign Up'} />
+                  </div>
+                )}
+                {this.state.message && (
+                  <div className="form-group">
+                    <div
+                      className={
+                        this.state.successful
+                          ? "alert alert-success"
+                          : "alert alert-danger"
+                      }
+                      role="alert"
+                    >
+                      {this.state.message}
+                    </div>
+                  </div>
+                )}
+                <CheckButton
+                  style={{ display: "none" }}
+                  ref={c => {
+                    this.checkBtn = c;
+                  }}
+                />
+              </Form>
+            </div>
           </div>
           <Footer />
         </div>

@@ -12,15 +12,16 @@ function ForgotPW() {
     return auth_service.forgot_password(email)
   }
   return (
-    <div>
-      <Header />
-      <div className={routeCSS.center}>
-        <BasicInput type={'text'} placeholder={'Enter email'} onChange={e => {
-            setEmail(e.target.value);
-        }} />
-        <MainBtn btnText={'Submit'} onClick={send}/>
+    <div className={routeCSS.pageContainer}>
+      <div>
+        <Header />
       </div>
-
+      <div className={routeCSS.center}>
+          <BasicInput type={'text'} placeholder={'Enter email'} onChange={e => {
+              setEmail(e.target.value);
+          }} />
+          <MainBtn btnText={'Submit'} onClick={send}/>
+        </div>
       <Footer />
     </div>
   )

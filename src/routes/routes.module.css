@@ -42,6 +42,13 @@
   margin: 0 1rem;
   font-size: 1.6rem;
 }
+.pageContainer {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 /* Media Queries */
 @media(min-width: 600px){
