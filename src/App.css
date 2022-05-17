@@ -1,0 +1,10 @@
+.container {
+  width: 100%,
+}
+body {
+  color: #523F38;
+}
+body, html, #appDiv{
+  width: 100%;
+  height: 100%;
+}
